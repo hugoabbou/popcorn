@@ -7,23 +7,23 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Inter:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet" />
 </head>
 <body>
 
   <!-- NAV -->
   <nav class="nav" id="nav">
-    <div class="nav-left">
+    <div class="nav-links nav-links--left">
       <a href="#flavors">Saveurs</a>
       <a href="#story">Maison</a>
     </div>
-    <a href="#" class="nav-logo">POP CORN</a>
-    <div class="nav-right">
+    <a href="#" class="nav-logo">POP<span>CORN</span></a>
+    <div class="nav-links nav-links--right">
       <a href="#events">Événements</a>
-      <a href="#contact" class="nav-order">Commander</a>
+      <a href="#contact" class="nav-cta">Commander</a>
     </div>
     <button class="nav-burger" id="burger" aria-label="Menu">
-      <span></span><span></span>
+      <span></span><span></span><span></span>
     </button>
   </nav>
 
@@ -36,316 +36,353 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-location">Le Marais — Paris — 2026</div>
-    <div class="hero-type">
-      <span class="ht-outline">POP</span>
-      <span class="ht-fill">CORN</span>
+    <!-- Ben-Day dot background -->
+    <div class="hero-dots"></div>
+
+    <!-- Left: text -->
+    <div class="hero-left">
+      <!-- Speech bubble: POW -->
+      <div class="bubble bubble--star bubble--yellow hero-bubble-1">POW!</div>
+
+      <p class="hero-eyebrow">Le Marais · Paris · 2026</p>
+      <h1 class="hero-headline">
+        <span class="h-pop">POP</span>
+        <span class="h-corn">CORN</span>
+      </h1>
+      <p class="hero-sub">Pop-corn gastronomique.<br>Packaging iconique. Pur plaisir.</p>
+
+      <div class="hero-actions">
+        <a href="#flavors" class="btn-comic btn-comic--red">Découvrir les saveurs</a>
+        <a href="#contact" class="btn-comic btn-comic--outline">Commander →</a>
+      </div>
+
+      <!-- Speech bubble: CRUNCH -->
+      <div class="bubble bubble--speech bubble--cyan hero-bubble-2">CRUNCH!</div>
     </div>
-    <div class="hero-graphic">
-      <div class="hg-circle"></div>
-      <div class="hg-dots"></div>
-    </div>
-    <div class="hero-foot">
-      <p class="hero-desc">Pop-corn gastronomique &amp; packaging iconique.<br>Esthétique pop art. Fait avec exigence.</p>
-      <a href="#flavors" class="hero-scroll">
-        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2v14M2 9l7 7 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        Découvrir
-      </a>
+
+    <!-- Right: illustration -->
+    <div class="hero-right">
+      <!-- Falling kernels -->
+      <div class="kernels-area">
+        <div class="kernel kern-1"></div>
+        <div class="kernel kern-2"></div>
+        <div class="kernel kern-3"></div>
+        <div class="kernel kern-4"></div>
+        <div class="kernel kern-5"></div>
+        <div class="kernel kern-6"></div>
+        <div class="kernel kern-7"></div>
+        <div class="kernel kern-8"></div>
+      </div>
+
+      <!-- Stars -->
+      <div class="star star-1">★</div>
+      <div class="star star-2">✦</div>
+      <div class="star star-3">★</div>
+
+      <!-- Popcorn bucket -->
+      <div class="bucket-wrap">
+        <div class="bucket-rim"></div>
+        <div class="bucket-body">
+          <div class="bucket-band">POP CORN</div>
+        </div>
+        <div class="bucket-base"></div>
+      </div>
+
+      <!-- YUM bubble -->
+      <div class="bubble bubble--star bubble--red hero-bubble-3">YUM!</div>
     </div>
   </section>
 
   <!-- TICKER -->
   <div class="ticker">
-    <div class="ticker-inner">
-      <span>Caramel Beurre Salé</span><span class="t-sep">◆</span>
-      <span>Parmesan Truffe</span><span class="t-sep">◆</span>
-      <span>Matcha Chocolat Blanc</span><span class="t-sep">◆</span>
-      <span>Piment Fumé</span><span class="t-sep">◆</span>
-      <span>Praliné Noisette</span><span class="t-sep">◆</span>
-      <span>Umami Sésame</span><span class="t-sep">◆</span>
-      <span>Vanille Bourbon</span><span class="t-sep">◆</span>
-      <span>Cheddar Maturé</span><span class="t-sep">◆</span>
-      <span>Caramel Beurre Salé</span><span class="t-sep">◆</span>
-      <span>Parmesan Truffe</span><span class="t-sep">◆</span>
-      <span>Matcha Chocolat Blanc</span><span class="t-sep">◆</span>
-      <span>Piment Fumé</span><span class="t-sep">◆</span>
-      <span>Praliné Noisette</span><span class="t-sep">◆</span>
-      <span>Umami Sésame</span><span class="t-sep">◆</span>
-      <span>Vanille Bourbon</span><span class="t-sep">◆</span>
-      <span>Cheddar Maturé</span><span class="t-sep">◆</span>
+    <div class="ticker-track">
+      <span>Caramel Beurre Salé</span><span class="t-dot">★</span>
+      <span>Parmesan Truffe</span><span class="t-dot">★</span>
+      <span>Matcha Chocolat Blanc</span><span class="t-dot">★</span>
+      <span>Piment Fumé</span><span class="t-dot">★</span>
+      <span>Praliné Noisette</span><span class="t-dot">★</span>
+      <span>Umami Sésame</span><span class="t-dot">★</span>
+      <span>Vanille Bourbon</span><span class="t-dot">★</span>
+      <span>Cheddar Maturé</span><span class="t-dot">★</span>
+      <span>Caramel Beurre Salé</span><span class="t-dot">★</span>
+      <span>Parmesan Truffe</span><span class="t-dot">★</span>
+      <span>Matcha Chocolat Blanc</span><span class="t-dot">★</span>
+      <span>Piment Fumé</span><span class="t-dot">★</span>
+      <span>Praliné Noisette</span><span class="t-dot">★</span>
+      <span>Umami Sésame</span><span class="t-dot">★</span>
+      <span>Vanille Bourbon</span><span class="t-dot">★</span>
+      <span>Cheddar Maturé</span><span class="t-dot">★</span>
     </div>
   </div>
 
   <!-- STATEMENT -->
   <section class="statement">
     <div class="statement-inner">
-      <p class="st-label">Notre philosophie</p>
-      <h2 class="st-text">
-        Un produit que <em>tout le monde</em> connaît.<br>
-        Une marque que <em>personne</em> n'a encore créée.
+      <div class="statement-dots"></div>
+      <div class="bubble bubble--speech bubble--yellow st-bubble">NOUVEAU !</div>
+      <h2 class="statement-text">
+        Un produit populaire.<br>
+        Une marque <em>désirable.</em>
       </h2>
+      <p class="statement-sub">Le premier bar à pop-corn gastronomique de Paris. Recettes signatures, packaging iconique, univers pop art.</p>
     </div>
   </section>
 
   <!-- FLAVORS -->
   <section class="flavors" id="flavors">
-    <div class="fl-head">
-      <span class="section-tag">— Saveurs signatures</span>
-      <h2 class="fl-title">Nos <em>recettes</em></h2>
-    </div>
-
-    <div class="fl-list">
-
-      <div class="fl-item" data-accent="yellow">
-        <div class="fl-item__num">01</div>
-        <div class="fl-item__name">
-          <h3>Caramel<br>Beurre Salé</h3>
-          <span class="fl-badge">Best seller</span>
-        </div>
-        <div class="fl-item__desc">Caramel noir, fleur de sel de Guérande, beurre AOC. Le classique réinventé.</div>
-        <div class="fl-item__meta">
-          <span class="fl-type">Sucré</span>
-          <span class="fl-price">dès 5,50 €</span>
+    <div class="container">
+      <div class="flavors-header">
+        <div class="section-label">Nos saveurs</div>
+        <h2 class="section-title">Signatures<br><em>& Drops</em></h2>
+        <div class="flavor-tabs">
+          <button class="tab active" data-tab="sucre">🍯 Sucré</button>
+          <button class="tab" data-tab="sale">🧀 Salé</button>
         </div>
       </div>
 
-      <div class="fl-item" data-accent="pink">
-        <div class="fl-item__num">02</div>
-        <div class="fl-item__name">
-          <h3>Parmesan<br>Truffe</h3>
+      <div class="flavor-grid" id="tabSucre">
+        <div class="flavor-card" style="--card-color: var(--yellow)">
+          <div class="fc-badge">Best seller</div>
+          <div class="fc-icon">🍯</div>
+          <h3>Caramel Beurre Salé</h3>
+          <p>Caramel noir, fleur de sel de Guérande, beurre AOC. Le classique réinventé.</p>
+          <div class="fc-price">dès 5,50 €</div>
         </div>
-        <div class="fl-item__desc">Parmesan Reggiano 24 mois, huile de truffe noire. L'apéritif chic qui se mérite.</div>
-        <div class="fl-item__meta">
-          <span class="fl-type">Salé</span>
-          <span class="fl-price">dès 5,50 €</span>
+        <div class="flavor-card" style="--card-color: var(--cyan)">
+          <div class="fc-icon">🌿</div>
+          <h3>Matcha Chocolat Blanc</h3>
+          <p>Thé matcha de cérémonie, couverture chocolat blanc. Subtil et addictif.</p>
+          <div class="fc-price">dès 5,50 €</div>
         </div>
-      </div>
-
-      <div class="fl-item" data-accent="yellow">
-        <div class="fl-item__num">03</div>
-        <div class="fl-item__name">
-          <h3>Matcha<br>Chocolat Blanc</h3>
+        <div class="flavor-card" style="--card-color: var(--red)">
+          <div class="fc-icon">🫐</div>
+          <h3>Praliné Noisette</h3>
+          <p>Praliné pur artisan, éclats de noisettes du Piémont. Une évidence gourmande.</p>
+          <div class="fc-price">dès 5,50 €</div>
         </div>
-        <div class="fl-item__desc">Thé matcha de cérémonie, couverture chocolat blanc. Subtil et addictif.</div>
-        <div class="fl-item__meta">
-          <span class="fl-type">Sucré</span>
-          <span class="fl-price">dès 5,50 €</span>
+        <div class="flavor-card" style="--card-color: var(--yellow)">
+          <div class="fc-icon">🍫</div>
+          <h3>Chocolat Blond</h3>
+          <p>Chocolat blond caramélisé aux notes de biscuit et de vanille.</p>
+          <div class="fc-price">dès 5,50 €</div>
         </div>
-      </div>
-
-      <div class="fl-item" data-accent="pink">
-        <div class="fl-item__num">04</div>
-        <div class="fl-item__name">
-          <h3>Piment<br>Fumé</h3>
-          <span class="fl-badge fl-badge--pink">Drop mensuel</span>
+        <div class="flavor-card" style="--card-color: var(--cyan)">
+          <div class="fc-icon">🌼</div>
+          <h3>Vanille Bourbon</h3>
+          <p>Vanille de Madagascar en gousses entières. Un classique premium.</p>
+          <div class="fc-price">dès 5,50 €</div>
         </div>
-        <div class="fl-item__desc">Paprika fumé, piment d'Espelette, cumin. Du caractère sans agressivité.</div>
-        <div class="fl-item__meta">
-          <span class="fl-type">Salé</span>
-          <span class="fl-price">dès 5,50 €</span>
-        </div>
-      </div>
-
-      <div class="fl-item" data-accent="yellow">
-        <div class="fl-item__num">05</div>
-        <div class="fl-item__name">
-          <h3>Praliné<br>Noisette</h3>
-        </div>
-        <div class="fl-item__desc">Praliné pur artisan, éclats de noisettes du Piémont. Une évidence gourmande.</div>
-        <div class="fl-item__meta">
-          <span class="fl-type">Sucré</span>
-          <span class="fl-price">dès 5,50 €</span>
+        <div class="flavor-card flavor-card--drop" style="--card-color: var(--red)">
+          <div class="fc-badge fc-badge--special">Drop mensuel</div>
+          <div class="fc-icon">⭐</div>
+          <h3>Édition Chef</h3>
+          <p>Chaque mois, une recette exclusive avec un chef reconnu. Quantité limitée.</p>
+          <div class="fc-price" style="color:var(--red)">Surprise du mois</div>
         </div>
       </div>
 
-      <div class="fl-item fl-item--dark" data-accent="dark">
-        <div class="fl-item__num" style="color:var(--yellow)">→</div>
-        <div class="fl-item__name">
-          <h3>Édition<br>Chef</h3>
+      <div class="flavor-grid hidden" id="tabSale">
+        <div class="flavor-card" style="--card-color: var(--yellow)">
+          <div class="fc-badge">Signature</div>
+          <div class="fc-icon">🧀</div>
+          <h3>Parmesan Truffe</h3>
+          <p>Parmesan Reggiano 24 mois, huile de truffe noire. L'apéritif chic.</p>
+          <div class="fc-price">dès 5,50 €</div>
         </div>
-        <div class="fl-item__desc">Chaque mois une collaboration exclusive avec un chef reconnu. En quantité limitée.</div>
-        <div class="fl-item__meta">
-          <span class="fl-type" style="color:var(--yellow); border-color:var(--yellow)">Exclusif</span>
-          <span class="fl-price" style="color:rgba(255,255,255,.4)">Surprise</span>
+        <div class="flavor-card" style="--card-color: var(--red)">
+          <div class="fc-icon">🌶️</div>
+          <h3>Piment Fumé</h3>
+          <p>Paprika fumé, piment d'Espelette, cumin. Du caractère sans agressivité.</p>
+          <div class="fc-price">dès 5,50 €</div>
         </div>
-      </div>
-
-    </div>
-
-    <div class="fl-foot">
-      <a href="#contact" class="link-arrow">Voir toute la gamme →</a>
-    </div>
-  </section>
-
-  <!-- BRAND MOMENT -->
-  <section class="brand-moment">
-    <div class="bm-left">
-      <p class="bm-tag">Objet de désir</p>
-      <h2 class="bm-title">Du<br>goût.<br>Du<br>style.</h2>
-    </div>
-    <div class="bm-right">
-      <p class="bm-text">Le packaging est aussi important que la recette. Chaque format est pensé pour être offert, exhibé, photographié. Une marque qui s'assume.</p>
-      <div class="bm-art">
-        <div class="bma-sq bma-sq--1"></div>
-        <div class="bma-sq bma-sq--2"></div>
-        <div class="bma-sq bma-sq--3"></div>
+        <div class="flavor-card" style="--card-color: var(--cyan)">
+          <div class="fc-icon">🧀</div>
+          <h3>Cheddar Maturé</h3>
+          <p>Cheddar affiné 18 mois, légèrement fumé. Intense et irrésistible.</p>
+          <div class="fc-price">dès 5,50 €</div>
+        </div>
+        <div class="flavor-card" style="--card-color: var(--yellow)">
+          <div class="fc-icon">🌿</div>
+          <h3>Herbes Fines</h3>
+          <p>Romarin, thym, origan, fleur de sel. La Méditerranée en sachet.</p>
+          <div class="fc-price">dès 5,50 €</div>
+        </div>
+        <div class="flavor-card" style="--card-color: var(--cyan)">
+          <div class="fc-icon">🫚</div>
+          <h3>Umami Sésame</h3>
+          <p>Sauce soja, sésame toasté, huile de nori. Un voyage Tokyo.</p>
+          <div class="fc-price">dès 5,50 €</div>
+        </div>
+        <div class="flavor-card flavor-card--drop" style="--card-color: var(--red)">
+          <div class="fc-badge fc-badge--special">Apéritif</div>
+          <div class="fc-icon">🥂</div>
+          <h3>Édition Apéritive</h3>
+          <p>Fromages, épices, intensité. Le plateau chic réinventé.</p>
+          <div class="fc-price" style="color:var(--red)">dès 6,50 €</div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- FORMATS -->
   <section class="formats" id="formats">
-    <div class="formats-label">
-      <span class="section-tag">— Formats &amp; prix</span>
-    </div>
-    <div class="formats-row">
-      <div class="fmt-block" style="--bg: var(--yellow); --fg: #0C0C0C">
-        <span class="fmt-n">I</span>
-        <div class="fmt-info">
+    <div class="container">
+      <div class="section-label">Formats &amp; Prix</div>
+      <h2 class="section-title">Pour chaque <em>occasion</em></h2>
+      <div class="formats-grid">
+        <div class="fmt-card" style="--fc: var(--yellow)">
+          <div class="fmt-num">I</div>
           <h4>Individuel</h4>
           <p>Découverte &amp; impulsion</p>
+          <div class="fmt-price">5,50—6,50 €</div>
         </div>
-        <span class="fmt-price">5,50—6,50 €</span>
-      </div>
-      <div class="fmt-block" style="--bg: #F5F3EE; --fg: #0C0C0C">
-        <span class="fmt-n">II</span>
-        <div class="fmt-info">
+        <div class="fmt-card" style="--fc: var(--cyan)">
+          <div class="fmt-num">II</div>
           <h4>Format Partage</h4>
           <p>Cœur de gamme</p>
+          <div class="fmt-price">9,50—12,00 €</div>
         </div>
-        <span class="fmt-price">9,50—12,00 €</span>
-      </div>
-      <div class="fmt-block" style="--bg: var(--pink); --fg: #0C0C0C">
-        <span class="fmt-n">III</span>
-        <div class="fmt-info">
+        <div class="fmt-card" style="--fc: var(--red)">
+          <div class="fmt-num">III</div>
           <h4>Grand Format</h4>
           <p>Partage &amp; cadeau</p>
+          <div class="fmt-price">16,00—24,00 €</div>
         </div>
-        <span class="fmt-price">16,00—24,00 €</span>
-      </div>
-      <div class="fmt-block" style="--bg: #0C0C0C; --fg: var(--yellow)">
-        <span class="fmt-n">IV</span>
-        <div class="fmt-info">
+        <div class="fmt-card" style="--fc: var(--yellow)">
+          <div class="fmt-num">IV</div>
           <h4>Coffret Gift</h4>
-          <p>Corporate &amp; event</p>
+          <p>Corporate &amp; events</p>
+          <div class="fmt-price">22,00—39,00 €</div>
         </div>
-        <span class="fmt-price">22,00—39,00 €</span>
       </div>
     </div>
   </section>
 
   <!-- STORY -->
   <section class="story" id="story">
-    <div class="story-text">
-      <span class="section-tag">— Notre maison</span>
-      <h2 class="story-title">Le Marais.<br><em>Paris.</em></h2>
-      <div class="story-body">
+    <div class="story-dots"></div>
+    <div class="story-inner">
+      <div class="story-text">
+        <div class="section-label">Notre maison</div>
+        <h2 class="section-title">Le Marais.<br><em>Paris.</em></h2>
         <p>À Paris, le pop-corn reste cantonné au cinéma ou aux rayons standardisés. Nous avons décidé de changer ça.</p>
-        <p>Notre boutique dans le Marais est née d'une conviction : un produit populaire peut devenir un objet de goût, de style et de gifting — à condition de l'exécuter avec une vraie exigence.</p>
+        <p>Notre boutique dans le Marais est née d'une conviction : un produit populaire peut devenir un objet de goût, de style et de gifting.</p>
         <p>L'univers s'inspire du pop art d'Andy Warhol. Les recettes sont développées avec des chefs de renom.</p>
-      </div>
-      <div class="story-founders">
-        <div class="sf-item">
-          <div class="sf-dot" style="background:var(--yellow)"></div>
-          <div>
+        <div class="founders">
+          <div class="founder-tag" style="--fc:var(--yellow)">
             <strong>Sydney Abbou</strong>
             <span>Direction &amp; Opérations</span>
           </div>
-        </div>
-        <div class="sf-item">
-          <div class="sf-dot" style="background:var(--pink)"></div>
-          <div>
+          <div class="founder-tag" style="--fc:var(--red)">
             <strong>Alexis Benzaken</strong>
-            <span>Stratégie &amp; Business Dev</span>
+            <span>Stratégie &amp; Dev</span>
           </div>
         </div>
       </div>
-    </div>
-    <div class="story-visual">
-      <div class="warhol">
-        <div class="w-cell" style="--cb:#FFD600;--ct:#0C0C0C"><span>POP</span></div>
-        <div class="w-cell" style="--cb:#0C0C0C;--ct:#FFD600"><span>ART</span></div>
-        <div class="w-cell" style="--cb:#E8156D;--ct:#0C0C0C"><span>CORN</span></div>
-        <div class="w-cell" style="--cb:#F5F3EE;--ct:#0C0C0C"><span>PARIS</span></div>
+      <div class="story-art">
+        <div class="warhol-grid">
+          <div class="wg-cell" style="--bg:var(--yellow);--fg:#1A1A1A">POP</div>
+          <div class="wg-cell" style="--bg:var(--red);--fg:#FFFDF0">ART</div>
+          <div class="wg-cell" style="--bg:var(--cyan);--fg:#1A1A1A">CORN</div>
+          <div class="wg-cell" style="--bg:#1A1A1A;--fg:var(--yellow)">PARIS</div>
+        </div>
+        <div class="bubble bubble--speech bubble--red story-bubble">DELICIOUS!</div>
       </div>
     </div>
   </section>
 
   <!-- SUNDAY -->
   <section class="sunday" id="sunday">
-    <div class="sunday-inner">
-      <span class="section-tag section-tag--light">— Dessert signature</span>
-      <h2 class="sunday-title">Les <em>Sundays</em></h2>
-      <p class="sunday-desc">Dessert glacé, sauces premium et éclats de pop-corn. Très photogénique. Très bon.</p>
-      <div class="sunday-price">À partir de 8,50 €</div>
-    </div>
-    <div class="sunday-art">
-      <div class="sa-circle sa-c1"></div>
-      <div class="sa-circle sa-c2"></div>
-      <div class="sa-circle sa-c3"></div>
-      <div class="sa-labels">
-        <span>Caramel</span>
-        <span>Matcha</span>
-        <span>Praliné</span>
+    <div class="container">
+      <div class="sunday-inner">
+        <div class="sunday-text">
+          <div class="section-label section-label--light">Dessert signature</div>
+          <h2 class="section-title section-title--light">Les <em>Sundays</em></h2>
+          <p>Dessert glacé, sauces premium et éclats de pop-corn. Photogénique. Irrésistible.</p>
+          <div class="sunday-price">À partir de 8,50 €</div>
+          <a href="#contact" class="btn-comic btn-comic--yellow">Commander →</a>
+        </div>
+        <div class="sunday-visual">
+          <div class="sundae-art">
+            <div class="sa-glass">
+              <div class="sa-scoop sa-scoop--1"></div>
+              <div class="sa-scoop sa-scoop--2"></div>
+              <div class="sa-sauce"></div>
+              <div class="sa-kernels">
+                <span class="sa-kern"></span>
+                <span class="sa-kern"></span>
+                <span class="sa-kern"></span>
+              </div>
+            </div>
+          </div>
+          <div class="bubble bubble--star bubble--yellow sun-bubble">MMMMH!</div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- EVENTS -->
   <section class="events" id="events">
-    <div class="ev-head">
-      <span class="section-tag">— B2B &amp; Événements</span>
-      <h2 class="ev-title">On vient<br>chez vous.</h2>
-    </div>
-    <div class="ev-grid">
-      <div class="ev-card">
-        <div class="ev-card__bar" style="background:var(--yellow)"></div>
-        <div class="ev-card__from">À partir de</div>
-        <div class="ev-card__price">690 €</div>
-        <h4>Bar à pop-corn</h4>
-        <p>Chariot premium, service complet, déco sur-mesure. Un souvenir pour vos invités.</p>
+    <div class="container">
+      <div class="section-label">B2B &amp; Événements</div>
+      <h2 class="section-title">On vient <em>chez vous.</em></h2>
+      <div class="events-grid">
+        <div class="ev-card">
+          <div class="ev-card__top" style="background:var(--yellow)">
+            <span class="ev-from">À partir de</span>
+            <div class="ev-price">690 €</div>
+          </div>
+          <div class="ev-card__body">
+            <h4>Bar à pop-corn</h4>
+            <p>Chariot premium, service complet, déco sur-mesure. Un souvenir mémorable.</p>
+          </div>
+        </div>
+        <div class="ev-card">
+          <div class="ev-card__top" style="background:var(--cyan)">
+            <span class="ev-from">Sur devis</span>
+            <div class="ev-price">Corporate</div>
+          </div>
+          <div class="ev-card__body">
+            <h4>Coffrets entreprise</h4>
+            <p>Cadeaux clients &amp; équipes, packaging personnalisable avec votre marque.</p>
+          </div>
+        </div>
+        <div class="ev-card">
+          <div class="ev-card__top" style="background:var(--red)">
+            <span class="ev-from">Sur mesure</span>
+            <div class="ev-price" style="color:#FFFDF0">Privé</div>
+          </div>
+          <div class="ev-card__body">
+            <h4>Événements privés</h4>
+            <p>Mariages, anniversaires, lancements presse. Le format s'adapte.</p>
+          </div>
+        </div>
       </div>
-      <div class="ev-card">
-        <div class="ev-card__bar" style="background:var(--pink)"></div>
-        <div class="ev-card__from">Sur devis</div>
-        <div class="ev-card__price">Corporate</div>
-        <h4>Coffrets entreprise</h4>
-        <p>Cadeaux clients &amp; équipes, packaging personnalisable avec votre identité.</p>
+      <div class="events-cta">
+        <a href="#contact" class="btn-comic btn-comic--red">Demander un devis</a>
+        <div class="bubble bubble--speech bubble--cyan ev-bubble">ON ARRIVE !</div>
       </div>
-      <div class="ev-card">
-        <div class="ev-card__bar" style="background:var(--yellow)"></div>
-        <div class="ev-card__from">Sur mesure</div>
-        <div class="ev-card__price">Privé</div>
-        <h4>Événements privés</h4>
-        <p>Mariages, anniversaires, lancements presse. Le format s'adapte à votre projet.</p>
-      </div>
-    </div>
-    <div class="ev-cta">
-      <a href="#contact" class="btn-yellow">Demander un devis →</a>
     </div>
   </section>
 
   <!-- CHANNELS -->
   <section class="channels">
-    <div class="ch-grid">
+    <div class="channels-inner">
       <div class="ch-item">
         <div class="ch-icon">🏪</div>
-        <strong>Boutique flagship</strong>
+        <strong>Boutique</strong>
         <span>Le Marais, 7j/7</span>
       </div>
-      <div class="ch-sep"></div>
       <div class="ch-item">
         <div class="ch-icon">🛒</div>
         <strong>E-commerce</strong>
         <span>Coffrets &amp; éditions limitées</span>
       </div>
-      <div class="ch-sep"></div>
       <div class="ch-item">
         <div class="ch-icon">🛵</div>
         <strong>Livraison</strong>
         <span>Uber Eats &amp; Deliveroo</span>
       </div>
-      <div class="ch-sep"></div>
       <div class="ch-item">
         <div class="ch-icon">🤝</div>
         <strong>Partenariats</strong>
@@ -356,73 +393,80 @@
 
   <!-- CONTACT -->
   <section class="contact" id="contact">
-    <div class="contact-left">
-      <span class="section-tag section-tag--light">— Contact</span>
-      <h2 class="contact-title">Parlons<br><em>pop-corn.</em></h2>
-      <div class="contact-details">
-        <div class="cd-row">
-          <span class="cd-label">Boutique</span>
-          <span class="cd-val">Le Marais, Paris<br>Ouverture 2026</span>
+    <div class="container">
+      <div class="contact-inner">
+        <div class="contact-left">
+          <div class="section-label">Contact</div>
+          <h2 class="section-title">Parlons<br><em>pop-corn.</em></h2>
+          <div class="contact-info">
+            <div class="ci-row">
+              <span class="ci-label">📍 Boutique</span>
+              <span>Le Marais, Paris · Ouverture 2026</span>
+            </div>
+            <div class="ci-row">
+              <span class="ci-label">📸 Instagram</span>
+              <span>@popcornmarais</span>
+            </div>
+            <div class="ci-row">
+              <span class="ci-label">✉️ Email</span>
+              <span>hello@popcornmarais.fr</span>
+            </div>
+          </div>
+          <div class="bubble bubble--star bubble--yellow ct-bubble">HELLO!</div>
         </div>
-        <div class="cd-row">
-          <span class="cd-label">Instagram</span>
-          <span class="cd-val">@popcornmarais</span>
-        </div>
-        <div class="cd-row">
-          <span class="cd-label">Email</span>
-          <span class="cd-val">hello@popcornmarais.fr</span>
-        </div>
+        <form class="contact-form" id="contactForm">
+          <div class="cf-row">
+            <input type="text" placeholder="Prénom" required />
+            <input type="text" placeholder="Nom" required />
+          </div>
+          <input type="email" placeholder="Email" required />
+          <select>
+            <option value="">Raison du contact</option>
+            <option>Commande en ligne</option>
+            <option>Devis événementiel</option>
+            <option>Partenariat B2B</option>
+            <option>Coffrets corporate</option>
+            <option>Autre</option>
+          </select>
+          <textarea placeholder="Votre message..." rows="4"></textarea>
+          <button type="submit" class="btn-comic btn-comic--red btn-full">Envoyer →</button>
+        </form>
       </div>
     </div>
-    <form class="contact-form" id="contactForm">
-      <div class="cf-row">
-        <input type="text" placeholder="Prénom" required />
-        <input type="text" placeholder="Nom" required />
-      </div>
-      <input type="email" placeholder="Email" required />
-      <select>
-        <option value="">Raison du contact</option>
-        <option>Commande en ligne</option>
-        <option>Devis événementiel</option>
-        <option>Partenariat B2B</option>
-        <option>Coffrets corporate</option>
-        <option>Autre</option>
-      </select>
-      <textarea placeholder="Votre message..." rows="4"></textarea>
-      <button type="submit" class="btn-yellow">Envoyer →</button>
-    </form>
   </section>
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="footer-top">
-      <div class="footer-logo">POP<span>CORN</span></div>
-      <p class="footer-tag">La maison du pop-corn premium. Le Marais, Paris.</p>
-    </div>
-    <div class="footer-links">
-      <div class="fl-col">
-        <h5>Produits</h5>
-        <a href="#flavors">Saveurs sucrées</a>
-        <a href="#flavors">Saveurs salées</a>
-        <a href="#sunday">Sundays</a>
-        <a href="#formats">Coffrets</a>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">POP<span>CORN</span></div>
+        <p>La maison du pop-corn premium.<br>Le Marais, Paris.</p>
       </div>
-      <div class="fl-col">
-        <h5>Services</h5>
-        <a href="#events">Bar à pop-corn</a>
-        <a href="#events">Corporate gifts</a>
-        <a href="#channels">Livraison</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <div class="fl-col">
-        <h5>Suivez-nous</h5>
-        <a href="#">Instagram</a>
-        <a href="#">TikTok</a>
-        <a href="#">Pinterest</a>
+      <div class="footer-links">
+        <div class="fl-col">
+          <h5>Produits</h5>
+          <a href="#flavors">Saveurs sucrées</a>
+          <a href="#flavors">Saveurs salées</a>
+          <a href="#sunday">Sundays</a>
+          <a href="#formats">Coffrets</a>
+        </div>
+        <div class="fl-col">
+          <h5>Services</h5>
+          <a href="#events">Bar à pop-corn</a>
+          <a href="#events">Corporate gifts</a>
+          <a href="#channels">Livraison</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="fl-col">
+          <h5>Suivez-nous</h5>
+          <a href="#">Instagram</a>
+          <a href="#">TikTok</a>
+          <a href="#">Pinterest</a>
+        </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Pop Corn — SAS — Le Marais, Paris</span>
+      <span>© 2026 Pop Corn · SAS · Le Marais, Paris</span>
       <span>Sydney Abbou &amp; Alexis Benzaken</span>
     </div>
   </footer>
