@@ -192,7 +192,7 @@ input, textarea, select { font-family: var(--font-body); font-size: 1rem; outlin
   cursor: pointer;
 }
 .gal-item:last-child { border-right: none; }
-.gal-item img { transition: transform .5s ease; }
+.gal-item img { transition: transform .5s ease; filter: saturate(1.5) contrast(1.1); }
 .gal-item:hover img { transform: scale(1.04); }
 
 /* Pop art duotone overlays */
@@ -299,7 +299,7 @@ input, textarea, select { font-family: var(--font-body); font-size: 1rem; outlin
 .lifestyle-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; height: 340px; }
 .ls-item { position: relative; overflow: hidden; border-right: var(--outline); isolation: isolate; }
 .ls-item:last-child { border-right: none; }
-.ls-item img { transition: transform .5s; }
+.ls-item img { transition: transform .5s; filter: saturate(1.5) contrast(1.1); }
 .ls-item:hover img { transform: scale(1.06); }
 .ls-overlay { position: absolute; inset: 0; mix-blend-mode: multiply; }
 .ls-overlay--cyan   { background: var(--cyan);   opacity: .55; }
@@ -318,7 +318,7 @@ input, textarea, select { font-family: var(--font-body); font-size: 1rem; outlin
 .ev-card { border: var(--outline); box-shadow: var(--shadow); border-radius: 6px; overflow: hidden; background: #fff; transition: transform .15s, box-shadow .15s; }
 .ev-card:hover { transform: translate(-3px,-3px); box-shadow: 7px 7px 0 var(--black); }
 .ev-img-wrap { height: 200px; position: relative; overflow: hidden; isolation: isolate; border-bottom: var(--outline); }
-.ev-img-wrap img { transition: transform .5s; }
+.ev-img-wrap img { transition: transform .5s; filter: saturate(1.5) contrast(1.1); }
 .ev-card:hover .ev-img-wrap img { transform: scale(1.05); }
 .ev-img-overlay { position: absolute; inset: 0; mix-blend-mode: multiply; opacity: .55; }
 .ev-img-wrap::after { content:''; position:absolute; inset:0; background:var(--dots-sm); opacity:.2; pointer-events:none; z-index:1; }
@@ -352,7 +352,7 @@ input, textarea, select { font-family: var(--font-body); font-size: 1rem; outlin
 .ig-item:last-child { border-right: none; }
 .ig-item::after { content:''; position:absolute; inset:0; background: rgba(26,26,26,0); transition: background .25s; }
 .ig-item:hover::after { background: rgba(232,21,29,.35); }
-.ig-item img { transition: transform .4s; }
+.ig-item img { transition: transform .4s; filter: saturate(1.5) contrast(1.1); }
 .ig-item:hover img { transform: scale(1.06); }
 
 /* ── CONTACT ─────────────────────────────────────────────── */
