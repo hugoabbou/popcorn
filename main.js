@@ -1,105 +1,103 @@
 /* ============================================================
-   POPCORN — MAIN JS
+   POP CORN — MAIN JS
    ============================================================ */
 
-// ── NAV SCROLL ──────────────────────────────────────────────
+// ── NAV scroll class ─────────────────────────────────────────
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 60);
-});
+  nav.classList.toggle('scrolled', window.scrollY > 40);
+}, { passive: true });
 
-// ── MOBILE BURGER ───────────────────────────────────────────
+// ── BURGER ───────────────────────────────────────────────────
 const burger     = document.getElementById('burger');
 const mobileMenu = document.getElementById('mobileMenu');
 
 burger.addEventListener('click', () => {
   const open = mobileMenu.classList.toggle('open');
-  burger.setAttribute('aria-expanded', open);
-  // animate burger
-  const spans = burger.querySelectorAll('span');
+  const [s1, s2] = burger.querySelectorAll('span');
   if (open) {
-    spans[0].style.transform = 'translateY(7px) rotate(45deg)';
-    spans[1].style.opacity   = '0';
-    spans[2].style.transform = 'translateY(-7px) rotate(-45deg)';
+    s1.style.transform = 'translateY(7.5px) rotate(45deg)';
+    s2.style.transform = 'translateY(-7.5px) rotate(-45deg)';
   } else {
-    spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+    s1.style.transform = '';
+    s2.style.transform = '';
   }
 });
 
-// Close on link click
-document.querySelectorAll('.mobile-link').forEach(link => {
-  link.addEventListener('click', () => {
+mobileMenu.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
     mobileMenu.classList.remove('open');
-    burger.querySelectorAll('span').forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+    burger.querySelectorAll('span').forEach(s => s.style.transform = '');
   });
 });
 
-// ── FLAVOR TABS ─────────────────────────────────────────────
-const tabBtns   = document.querySelectorAll('.tab-btn');
-const tabSucre  = document.getElementById('tabSucre');
-const tabSale   = document.getElementById('tabSale');
-
-tabBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    tabBtns.forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    if (btn.dataset.tab === 'sucre') {
-      tabSucre.classList.remove('hidden');
-      tabSale.classList.add('hidden');
-    } else {
-      tabSale.classList.remove('hidden');
-      tabSucre.classList.add('hidden');
-    }
+// ── SMOOTH ANCHOR ────────────────────────────────────────────
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (!target) return;
+    e.preventDefault();
+    const y = target.getBoundingClientRect().top + window.scrollY - 76;
+    window.scrollTo({ top: y, behavior: 'smooth' });
   });
 });
 
-// ── SCROLL REVEAL ───────────────────────────────────────────
-const revealEls = document.querySelectorAll(
-  '.flavor-card, .format-card, .sunday-card, .channel-card, .events-list li, .warhol-cell, .ea-block, .section-header, .story-text p, .formats-text, .contact-grid > *'
-);
+// ── SCROLL REVEAL ────────────────────────────────────────────
+const revealTargets = [
+  '.fl-item',
+  '.fmt-block',
+  '.ev-card',
+  '.ch-item',
+  '.story-text',
+  '.story-visual',
+  '.sunday-inner',
+  '.contact-left',
+  '.contact-form',
+  '.statement-inner',
+  '.bm-left',
+  '.bm-right',
+  '.fl-head',
+];
 
-revealEls.forEach(el => el.classList.add('reveal'));
+const allReveal = document.querySelectorAll(revealTargets.join(','));
+allReveal.forEach(el => el.classList.add('reveal'));
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry, i) => {
-    if (entry.isIntersecting) {
-      // stagger siblings
-      const siblings = [...entry.target.parentElement.querySelectorAll('.reveal:not(.visible)')];
-      const idx = siblings.indexOf(entry.target);
-      setTimeout(() => {
-        entry.target.classList.add('visible');
-      }, idx * 60);
-      observer.unobserve(entry.target);
-    }
+const io = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (!entry.isIntersecting) return;
+    // stagger children of same parent
+    const siblings = [...entry.target.parentElement.children].filter(c => c.classList.contains('reveal') && !c.classList.contains('in'));
+    const idx = siblings.indexOf(entry.target);
+    setTimeout(() => entry.target.classList.add('in'), Math.min(idx * 80, 320));
+    io.unobserve(entry.target);
   });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
 
-revealEls.forEach(el => observer.observe(el));
+allReveal.forEach(el => io.observe(el));
 
-// ── CONTACT FORM ────────────────────────────────────────────
-const form = document.getElementById('contactForm');
-form.addEventListener('submit', (e) => {
+// ── CONTACT FORM ─────────────────────────────────────────────
+document.getElementById('contactForm').addEventListener('submit', e => {
   e.preventDefault();
-  const btn = form.querySelector('button[type="submit"]');
-  btn.textContent = '✓ Message envoyé !';
-  btn.style.background = '#22c55e';
+  const btn = e.target.querySelector('button[type="submit"]');
+  btn.textContent = '✓ Message envoyé';
+  btn.style.background = '#16a34a';
   btn.disabled = true;
   setTimeout(() => {
-    btn.textContent = 'Envoyer le message';
+    btn.textContent = 'Envoyer →';
     btn.style.background = '';
     btn.disabled = false;
-    form.reset();
-  }, 3000);
+    e.target.reset();
+  }, 3500);
 });
 
-// ── SMOOTH ANCHOR ───────────────────────────────────────────
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', (e) => {
-    const target = document.querySelector(a.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      const offset = target.getBoundingClientRect().top + window.scrollY - 80;
-      window.scrollTo({ top: offset, behavior: 'smooth' });
-    }
+// ── WARHOL HOVER ROTATE ──────────────────────────────────────
+// Stagger rotate all cells on section hover
+const warholCells = document.querySelectorAll('.w-cell');
+document.querySelector('.warhol')?.addEventListener('mouseenter', () => {
+  warholCells.forEach((c, i) => {
+    setTimeout(() => c.classList.add('w-hovered'), i * 60);
   });
+});
+document.querySelector('.warhol')?.addEventListener('mouseleave', () => {
+  warholCells.forEach(c => c.classList.remove('w-hovered'));
 });
